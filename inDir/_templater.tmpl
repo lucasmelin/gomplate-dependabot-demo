@@ -1,5 +1,5 @@
 {{- define "demotemplate" }}
-{{- filepath.Join "inDir" "/go.mod" | file.Read }}
+{{- filepath.Join tmpl.PathDir "/go.mod" | file.Read }}
 {{ end -}}
 
 {{ $outPath := "outDir/go.mod" }}
