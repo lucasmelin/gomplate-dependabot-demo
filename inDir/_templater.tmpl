@@ -1,0 +1,6 @@
+{{- define "demotemplate" }}
+{{- filepath.Join "inDir" "/go.mod" | file.Read }}
+{{ end -}}
+
+{{ $outPath := "outDir/go.mod" }}
+{{ tmpl.Exec "demotemplate" | strings.ReplaceAll "lucasmelin" .Env.USER | strings.ReplaceAll "gomplate-dependabot-demo" .Env.PROJECT | file.Write $outPath }}
